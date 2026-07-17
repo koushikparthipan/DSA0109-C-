@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    long long n;
+    cout << "INPUT: ";
+    cin >> n;
+
+    if (n < 0) {
+        cout << "OUTPUT: Not an Armstrong number";
+        return 0;
+    }
+
+    long long temp = n;
+    int digits = 0;
+
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    if (n == 0) digits = 1; 
+
+    long long sum = 0;
+    temp = n;
+
+    while (temp > 0) {
+        int d = temp % 10;
+        sum += (long long)pow(d, digits);
+        temp /= 10;
+    }
+
+    if (sum == n)
+        cout << "OUTPUT: Armstrong number";
+    else
+        cout << "OUTPUT: Not an Armstrong number";
+
+    return 0;
+}
