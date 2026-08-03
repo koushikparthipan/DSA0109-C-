@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+private:
+    string name;
+
+public:
+    // Constructor
+    Student(string n) {
+        name = n;
+        cout << "Constructor called. Student name: " << name << endl;
+    }
+
+    // Destructor
+    ~Student() {
+        cout << "Destructor called. Student object destroyed." << endl;
+    }
+};
+
+int main() {
+    Student s("KOUSHIK P");
+    return 0;
+}
