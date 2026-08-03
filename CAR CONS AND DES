@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+class Car {
+public:
+    Car() {
+        cout << "Constructor called: Car object created." << endl;
+    }
+
+    ~Car() {
+        cout << "Destructor called: Car object destroyed." << endl;
+    }
+};
+
+int main() {
+    Car c;  // Constructor runs here
+    return 0; // Destructor runs here
+}
