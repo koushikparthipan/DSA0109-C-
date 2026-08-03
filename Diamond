@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n = 5; // half size (for this pattern)
+
+    // Top half (including middle)
+    for (int i = 0; i < n; i++) {
+        for (int sp = 0; sp < n - 1 - i; sp++)
+            cout << " ";
+        for (int stars = 0; stars < 2 * i + 1; stars++)
+            cout << "*";
+        cout << "\n";
+    }
+
+    // Bottom half
+    for (int i = n - 2; i >= 0; i--) {
+        for (int sp = 0; sp < n - 1 - i; sp++)
+            cout << " ";
+        for (int stars = 0; stars < 2 * i + 1; stars++)
+            cout << "*";
+        cout << "\n";
+    }
+
+    return 0;
+}
