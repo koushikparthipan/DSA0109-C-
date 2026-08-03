@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class BankAccount {
+private:
+    string accountHolder;
+    int accountNumber;
+    double balance;
+
+public:
+    // Constructor
+    BankAccount(string name, int accNum, double initialBalance) {
+        accountHolder = name;
+        accountNumber = accNum;
+        balance = initialBalance;
+
+        cout << "BankAccount created for " << accountHolder << endl;
+        cout << "Account Number: " << accountNumber << endl;
+        cout << "Initial Balance: " << balance << endl;
+    }
+
+    // Destructor
+    ~BankAccount() {
+        cout << "BankAccount destroyed for " << accountHolder << endl;
+        cout << "Final Balance: " << balance << endl;
+    }
+
+    // Optional function to display details
+    void display() {
+        cout << "\n--- Account Details ---\n";
+        cout << "Account Holder: " << accountHolder << endl;
+        cout << "Account Number: " << accountNumber << endl;
+        cout << "Balance: " << balance << endl;
+    }
+};
+
+int main() {
+    BankAccount acc("KOUSHIK P", 192421178, 5000.50);
+    acc.display();
+    return 0; // destructor will be called automatically here
+}
