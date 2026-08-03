@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long n;
+    cin >> n;
+
+    if (n <= 0) {
+        cout << n << " is not an abundant number\n";
+        return 0;
+    }
+
+    long long sum = 0;
+
+    for (long long i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            long long d1 = i;
+            long long d2 = n / i;
+
+            if (d1 != n) sum += d1;
+            if (d2 != d1 && d2 != n) sum += d2;
+        }
+    }
+
+    if (sum > n)
+        cout << n << " is an abundant number\n";
+    else
+        cout << n << " is not an abundant number\n";
+
+    return 0;
+}
