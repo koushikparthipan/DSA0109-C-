@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;  // number of elements
+
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        int x;
+        cin >> x;   // each element
+        sum += x;
+    }
+
+    cout << sum;
+    return 0;
+}
